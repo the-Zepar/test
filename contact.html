@@ -1,0 +1,321 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact TechVista - Get in Touch with Our Cloud Experts</title>
+    <style>
+      :root {
+        --primary-color: #007bff;
+        --secondary-color: #6c757d;
+        --background-color: #f8f9fa;
+        --text-color: #333;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .nav-links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: var(--text-color);
+      }
+
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80")
+            no-repeat center center;
+        background-size: cover;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      .contact-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 4rem 0;
+      }
+
+      .contact-form {
+        flex: 1;
+        min-width: 300px;
+        margin-right: 2rem;
+      }
+
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+
+      button {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .contact-card {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+      }
+
+      .contact-icon {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      #map {
+        height: 300px;
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 2rem 0;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .social-links a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          height: 30vh;
+        }
+
+        .contact-form,
+        .contact-info {
+          flex: 100%;
+          margin-right: 0;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">TechVista</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our cloud experts</p>
+      </div>
+    </section>
+
+    <section class="contact-section container">
+      <div class="contact-form">
+        <h2>Send us a message</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="tel" name="phone" placeholder="Your Phone Number" />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+          ></textarea>
+          <button class="sumbit-btn" type="submit">Send Message</button>
+          <p class="message"></p>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Our Location</h3>
+          <p>123 Tech Street, Innovation City, TC 12345</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <h3>Phone</h3>
+          <p>+1 (123) 456-7890</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>info@techvista.com</p>
+        </div>
+        <div class="contact-card">
+          <h3>Find us on the map</h3>
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-content">
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact Us</h3>
+          <p>123 Tech Street, Innovation City</p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Email: info@techvista.com</p>
+        </div>
+        <div>
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="https://facebook.com/techvista"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://twitter.com/techvista"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com/company/techvista"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/techvista"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p>&copy; 2023 TechVista. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const message = document.querySelector(".message");
+
+      // Initialize Google Map
+      function initMap() {
+        const techVista = { lat: 37.7749, lng: -122.4194 }; // Example coordinates
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: techVista,
+        });
+        const marker = new google.maps.Marker({
+          position: techVista,
+          map: map,
+        });
+      }
+
+      // Handle form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Here you would typically send the form data to your server
+          message.innerHTML = "success";
+          this.reset();
+        });
+
+      // Load Google Maps
+      window.onload = function () {
+        initMap();
+      };
+    </script>
+  </body>
+</html>
